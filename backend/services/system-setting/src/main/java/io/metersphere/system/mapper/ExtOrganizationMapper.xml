@@ -136,7 +136,7 @@
     <select id="getRelatedOrganizationIds" resultType="java.lang.String">
         select distinct o.id
         from user_role_relation urr join organization o on urr.organization_id = o.id
-        where user_id = #{userId}
+        where user_id = #{userId} and o.enable = true
     </select>
 
     <sql id="queryWhereCondition">
